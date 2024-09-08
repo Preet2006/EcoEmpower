@@ -1,0 +1,757 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+::selection {
+    background-color: #0b372dbb;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    position: relative; /* Add this to enable positional adjustments */
+     /* Adjust this value to shift upwards */
+    left: -30px; /* Adjust this value to shift towards the left */
+    bottom: -35px;
+}
+
+
+header {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    padding: 0.9rem 0;
+    top: -60px; /* Adjusted to shift upwards */
+    left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+header nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header ul a {
+    text-decoration: none;
+    color: #16423C; /* Initial text color */
+    padding: 0.5rem 1.5rem; /* Adjust padding to create a more box-like effect */
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.83rem;
+    position: relative; /* Needed for the positioning of the pseudo-element */
+    display: inline-block; /* Ensures proper positioning */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+header ul a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #6A9C89; /* Color of the box */
+    border-radius: 5px; /* Rounded corners of the box */
+    z-index: -1; /* Position the box behind the text */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition effect */
+    transform: scale(0); /* Initial scale to hide the box */
+    opacity: 0; /* Initial opacity to hide the box */
+}
+
+header ul a:hover {
+    color: #ffffff; /* Text color changes to white on hover */
+}
+
+header ul a:hover::before {
+    transform: scale(1); /* Expands the box to full size on hover */
+    opacity: 1; /* Makes the box visible on hover */
+}
+
+
+
+.search a {
+    font-size: 1.05rem;
+    padding: 0 3rem;
+}
+
+.hamburger {
+    padding-left: 1.5rem;
+}
+
+.hamburger a {
+    padding: 0;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    border-radius: 50%;
+    background-color: rgba(115, 115, 115, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger .bar {
+    position: relative;
+    width: 52%;
+    height: 1.3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.hamburger .bar::before,
+.hamburger .bar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 2px;
+}
+
+.hamburger .bar::before {
+    top: -4.5px;
+}
+
+.hamburger .bar::after {
+    top: 4.5px;
+}
+
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.parallax {
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(.2, .49, .32, .99);
+    z-index: 10; /* Ensure it's above the calculator */
+}
+
+.bg-img {
+    position: absolute;
+    width: 194.44%;
+    top: 1.86%;
+    left: 50.69%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.fog-7 {
+    position: absolute;
+    z-index: 2;
+    width: 132%;
+    top: 37.7%;
+    left: 70.8%;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-10 {
+    position: absolute;
+    z-index: 3;
+    width: 870px;
+    top: calc(50% + 69px);
+    left: calc(50% + 230px);
+    transform: translate(-50%, -50%);
+}
+
+.fog-6 {
+    position: absolute;
+    z-index: 16;
+    top: calc(50% + 177px);
+    left: calc(50% - 30px);
+    width: 1418px;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-9 {
+    position: absolute;
+    z-index: 5;
+    top: calc(50% + 119px);
+    left: calc(50% - 457px);
+    width: 463px;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-8 {
+    position: absolute;
+    z-index: 6;
+    width: 786px;
+    top: calc(50% + 96px);
+    left: calc(50% - 202px);
+    transform: translate(-50%, -50%);
+}
+
+.fog-5 {
+    position: absolute;
+    z-index: 13;
+    top: calc(50% + 149px);
+    left: calc(50% - 28px);
+    width: 1435px;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-7 {
+    position: absolute;
+    z-index: 8;
+    top: calc(50% + 134px);
+    left: calc(50% + 305px);
+    width: 515px;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    position: absolute;
+    z-index: 9;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+    pointer-events: auto;
+    color: #fff;
+}
+
+.text h2 {
+    font-weight: 100;
+    font-size: 3rem; /* Reduced size for better visibility */
+}
+
+.text h1 {
+    font-weight: 800;
+    font-size: 5rem; /* Reduced size for better visibility */
+}
+
+.mountain-6 {
+    position: absolute;
+    z-index: 10;
+    top: calc(50% + 86.5px);
+    width: 383.5px;
+    left: calc(50% + 590px);
+    transform: translate(-50%, -50%);
+}
+
+.fog-4 {
+    position: absolute;
+    z-index: 11;
+    top: calc(50% + 242px);
+    left: calc(50% - 64px);
+    width: 543px;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-5 {
+    position: absolute;
+    z-index: 12;
+    top: calc(50% + 269px);
+    left: calc(50% + 130px);
+    width: 583px;
+    transform: translate(-50%, -50%);
+}
+
+.fog-3 {
+    position: absolute;
+    z-index: 7;
+    top: calc(50% + 171px);
+    left: calc(50% + 29px);
+    width: 449px;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-4 {
+    position: absolute;
+    z-index: 14;
+    top: calc(50% + 221px);
+    left: calc(50% - 381.5px);
+    width: 717px;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-3 {
+    position: absolute;
+    z-index: 15;
+    top: 61.35%;
+    left: 101.11%;
+    width: 32.22%;
+    transform: translate(-50%, -50%);
+}
+
+.fog-2 {
+    position: absolute;
+    z-index: 4;
+    top: calc(50% + 95px);
+    left: calc(50% + 7px);
+    width: 1833px;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-2 {
+    position: absolute;
+    z-index: 17;
+    top: 69.01%;
+    left: 78.61%;
+    width: 47.91%;
+    transform: translate(-50%, -50%);
+}
+
+.mountain-1 {
+    position: absolute;
+    z-index: 18;
+    top: calc(50% + 91.5px);
+    left: calc(50% - 601px);
+    width: 450px;
+    transform: translate(-50%, -50%);
+}
+
+.sun-rays {
+    position: absolute;
+    z-index: 19;
+    top: 0;
+    right: 0;
+    width: 595px;
+    pointer-events: none;
+}
+
+.black-shwadow {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.fog-1 {
+    position: absolute;
+    z-index: 21;
+    top: 59.26%;
+    left: 50.69%;
+    width: 1600px;
+    transform: translate(-50%, -50%);
+}
+
+.vignette {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7));
+    pointer-events: none;
+}
+
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+/* General Body Styles */
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+
+/* CARBON FOOTPRINT CALCULATOR STYLES */
+/* Targeting the specific calculator element */
+
+
+/* Adjusted Calculator Section Styles */
+#carbon-calculator {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    background-image: url(im-transformed.jpeg);
+    background-size: cover;
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+}
+
+.calculator-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    backdrop-filter: blur(10px); /* Adds a slight blur effect behind the box */
+    text-align: center; /* Center text inside the container */
+}
+
+
+.calculator-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #16423C; /* Color from your palette */
+}
+
+#carbon-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #16423C; /* Use color from your palette */
+}
+
+#carbon-form input {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #6A9C89; /* Border color matching your theme */
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#carbon-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6A9C89; /* Button color matching your theme */
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#carbon-form button:hover {
+    background-color: #16423C; /* Darken on hover */
+}
+
+.result {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #16423C;
+}
+
+
+@media (max-width: 768px) {
+    .calculator-container {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+/* PHOTOGRAPHY SECTION */
+.photography-container {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #0D7C66;
+    border-radius: 15px;
+}
+
+.photography-container h2 {
+    font-size: clamp(40px, 6vw, 56px);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+.photo-card {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    max-width: 150px;
+    min-height: 500px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    transition: max-width 0.5s ease-in-out;
+}
+
+.photo-card:nth-of-type(1) {
+    background-image: url('street.jpg');
+}
+
+.photo-card:nth-of-type(2) {
+    background-image: url('Kindy-Green-Studies-11-1620x1080-1-1024x683.jpg');
+}
+
+.photo-card:nth-of-type(3) {
+    background-image: url('download.jpeg');
+}
+
+.photo-card:nth-of-type(4) {
+    background-image: url('B2B_models_greener_blogpost_visual_1920x1280.webp');
+}
+
+.photo-card:hover {
+    max-width: 500px;
+}
+
+.photo-card-body {
+    background: linear-gradient(180deg, rgba(13, 124, 102, 0) 0%, #0D7C66 100%);
+    padding: 4em;
+}
+
+.photo-title {
+    background: linear-gradient(180deg, #fff 0%, #0D7C66 100%);
+    position: absolute;
+    inset: 0;
+}
+
+.photo-card:hover .photo-title {
+    all: unset;
+}
+
+h3 {
+    font-size: clamp(30px, 4vw, 36px);
+    color: #fffbfb;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+    transform: rotate(-90deg) translateX(-350px);
+}
+
+.photo-card:hover h3 {
+    padding-bottom: 0.5em;
+    transform: unset;
+}
+
+p {
+    position: absolute;
+    font-size: 16px;
+    color: #fff;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.photo-card:hover p {
+    position: relative;
+    opacity: 1;
+    max-height: 100%;
+    transition-delay: 0.3s;
+}
+
+
+
+
+footer {
+    background-color: #16423C;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.footer-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    color: #ddd;
+    line-height: 1.8;
+}
+.footer-section about p{
+    color:#ddd;
+}
+
+.footer-section a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ff6f61;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section .social-icons a {
+    display: inline-block;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.footer-section .social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.footer-section .social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    background-color: #133f3b;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+.footer-bottom span {
+    color: #ff6f61;
+}
+.latest-articles {
+    padding: 60px 30px; /* Increased padding for a bigger section */
+    background-color: #E9EFEC; /* Match with your theme color */
+    text-align: center;
+}
+
+.latest-articles h2 {
+    font-size: 2.5rem; /* Slightly larger font size for the section title */
+    color: #16423C;
+    margin-bottom: 30px; /* Increased margin for more spacing */
+}
+
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Increased gap between article cards */
+}
+
+.article-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures content does not escape the box */
+    max-width: 340px; /* Width can be adjusted based on your design */
+    min-height: 400px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: scale(1.05);
+}
+
+.article-card img {
+    width: 100%;
+    height: 180px; /* Keeps the increased image height */
+    object-fit: cover;
+     /* Shifts the image down by adding margin on top */
+}
+
+
+.article-content {
+    padding: 20px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    overflow: auto; /* Allows scrolling if content is too long */
+    word-wrap: break-word; /* Breaks long words and ensures they wrap */
+    margin-top: -10px; /* Optional: Pulls the content up to compensate for the image shift */
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    color: #16423C;
+    margin-bottom: 10px;
+    white-space: normal; /* Allows the text to wrap to the next line */
+    overflow: hidden;
+    text-overflow: clip; /* Removes ellipsis if the text overflows */
+}
+
+.article-content p {
+    font-size: 1rem;
+    color: #6A9C89;
+    margin-bottom: 15px;
+    white-space: normal; /* Ensures text wraps within the box */
+    word-wrap: break-word; /* Breaks long words to fit within the box */
+    overflow: visible; /* Allows content to be fully displayed */
+}
+
+.read-more {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #16423C;
+    padding: 8px 12px; /* Increased padding for a more substantial button */
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #6A9C89;
+}
+
+/* Ensures standard horizontal text */
+.article-content, .article-content h3, .article-content p {
+    transform: none; /* Removes any rotation */
+    writing-mode: horizontal-tb;
+    text-align: left;
+}

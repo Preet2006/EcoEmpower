@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "../animation"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "animation"
+	}
+}
